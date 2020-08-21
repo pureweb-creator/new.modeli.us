@@ -99,7 +99,7 @@
             <a href="#" class="offer__btn offer__btn--watch-details"><span>Watch details</span> <img src="img/play_icon.svg" alt="play video"></a>
           </div>
         </div>
-        <div class="screen section__item_screen section__item_screen_right wow fadeInRight" data-wow-duration="1.5s">
+        <div class="screen section__item_screen section__item_screen_right wow zoomIn" data-wow-duration="1.5s">
           <img src="img/screen_1.png" alt="screen">
         </div>
       </div>
@@ -572,7 +572,7 @@
       <div class="section__content d-flex">
         <img src="img/screen_7.png" alt="screen" class="section__item_screen wow zoomIn"/>
         <div class="section__item">
-          <h2 class="section__title wow slideInDown">Оценка</h2>
+          <h2 class="section__title wow slideInUp">Оценка</h2>
           <p class="section__text wow slideInUp">
             Оценка – это ключевой инструмент управления. Каждый руководитель регулярно оценивает результаты своего сотрудника и отношение своего сотрудника, к важным вещам. Бланк оценки строится из функций, задач и монетарных целей. Оценка, в итоге, определяет размер премиального фонда сотрудника.
           </p>
@@ -638,6 +638,18 @@
 <script src="js/main.min.js"></script>
 <script>
   new WOW().init();
+
+  /* if my var reload isn't set locally.. in the first time it will be true */
+  if (!localStorage.getItem("reload")) {
+      /* set reload locally and then reload the page */
+      localStorage.setItem("reload", "true");
+      location.reload();
+  }
+  /* after reload clear the localStorage */
+  else {
+      localStorage.removeItem("reload");
+      localStorage.clear(); // an option
+  }
 </script>
 </body>
 </html>
